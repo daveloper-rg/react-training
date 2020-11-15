@@ -1,12 +1,24 @@
 import React from "react";
 
+export const MyChildComponent = () => {
+  React.useEffect(() => {
+    console.log("El componente se acaba de montar en el dom");
+
+    return () => console.log("** ME DESMONTAN !!***");
+  }, []);
+
+  return <h4>Hello from Child component</h4>;
+};
+
 export const MyComponent: React.FC = () => {
-  const [myName, setMyName] = React.useState("John Doe");
+  const [visible, setVisible] = React.useState(false);
 
   return (
     <>
-      <h4>{myName}</h4>
-      <input value={myName} onChange={(e) => setMyName(e.target.value)} />
+      {visible && <MyChildComponent />}
+      <button onClick={() => setVisible(!visible)}>
+        Toggle Child component visibility
+      </button>
     </>
   );
 };
