@@ -8,3 +8,7 @@ ReactDOM.render(
   </div>,
   document.getElementById("root")
 );
+
+//instalar
+//1. npm install react-router-dom --save
+//2. npm install @types/react-router-dom --save-dev
