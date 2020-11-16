@@ -33,7 +33,10 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "babel-regenerator-runtime": "^6.5.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "regenerator-runtime": "^0.13.7",
+    "use-debounce": "^5.0.4"
   }
 }
