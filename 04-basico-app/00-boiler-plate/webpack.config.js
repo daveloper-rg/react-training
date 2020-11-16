@@ -40,4 +40,7 @@ module.exports = {
       template: "index.html", //Name of template in ./src
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
 };
