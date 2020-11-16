@@ -1,7 +1,7 @@
 import React from "react";
 import { useDebounce } from "use-debounce";
 
-export const MyComponent = () => {
+const useUserCollection = () => {
   const [filter, setFilter] = React.useState("");
   const [debouncedFilter] = useDebounce(filter, 500);
   const [userCollection, setUserCollection] = React.useState([]);
@@ -17,6 +17,12 @@ export const MyComponent = () => {
   React.useEffect(() => {
     retrieveData(filter);
   }, [debouncedFilter]);
+
+  return {filter, setFilter, userCollection};
+}
+
+export const MyComponent = () => {
+  const {filter, setFilter, userCollection} = useUserCollection();
 
   return (
     <div>
