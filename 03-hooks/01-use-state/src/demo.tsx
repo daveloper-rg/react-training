@@ -7,15 +7,17 @@ export const MyComponent = () => {
   const [userCollection, setUserCollection] = React.useState([]);
 
   React.useEffect(() => {
-    fetch(`https://rickandmortyapi.com/api/character/?name=${filter}`)
-      .then((response) => response.json())
-      .then((json) => {
-        if (json.results) {
-          setUserCollection(json.results);
-        } else {
-          setUserCollection([]);
-        }
-      });
+    const promise = fetch(
+      `https://rickandmortyapi.com/api/character/?name=${filter}`
+    ).then((response) => response.json());
+
+    promise.then((json) => {
+      if (json.results) {
+        setUserCollection(json.results);
+      } else {
+        setUserCollection([]);
+      }
+    });
   }, [debouncedFilter]);
 
   return (
