@@ -1,12 +1,18 @@
 import React from "react";
 
-export const MyComponent: React.FC = () => {
-  const [myName, setMyName] = React.useState("John Doe");
+export const MyComponent = () => {
+  const inputEl = React.useRef(null);
+
+  const onButtonClick = () => {
+    console.log("YUUUEEEP ! TIIRAAA PATRAS GERVASIO !!!");
+    inputEl.current.focus();
+  };
 
   return (
     <>
-      <h4>{myName}</h4>
-      <input value={myName} onChange={(e) => setMyName(e.target.value)} />
+      <input ref={inputEl} type="text" />
+      <input type="text" />
+      <button onClick={onButtonClick}>Focus the input</button>{" "}
     </>
   );
 };
