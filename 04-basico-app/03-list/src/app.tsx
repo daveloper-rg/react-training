@@ -21,3 +21,10 @@ export const App = () => {
     </Router>
   );
 };
+
+/**
+ * Para el diseño instalamos:
+ * npm install @material-ui/core @material-ui/icons --save
+ * npm install emotion --save
+ * npm install @emotion/css -P
+ */
